@@ -207,10 +207,10 @@ Write your persistencyDir in `persistencyDir=`, it must always exist because whe
 When a Device connects successfully, it must subscribe to its server Interfaces. The SDK takes care of this detail and exposes a higher level interface.
 Create a new Qt5 project and add the Astarte's libraries in the .pro file:
 ```
-#Astarte Device SDK path
+//Astarte Device SDK path
 INCLUDEPATH += /usr/include/AstarteDeviceSDKQt5
 
-#Add astarte necessary libraries
+//Add astarte necessary libraries
 LIBS += -lmosquitto
 LIBS += -lmosquittopp
 LIBS += -lAstarteDeviceSDKQt5
