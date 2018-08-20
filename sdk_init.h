@@ -28,10 +28,10 @@ public:
     AstarteDeviceSDK *sdk;
 
     //device interface
-    QByteArray interface = "com.api.sviluppo.Sensori";
-
+    QByteArray interface = "INTERFACE_NAME_HERE";
+    
     //device ID
-    QString device = "4WEYO8CdQ4K2fw_LIPdkIA";
+    QString device = "DEVICE_ID_HERE";
 
 
 private slots:
