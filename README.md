@@ -203,7 +203,7 @@ Write your realm endpoint in `endpoint=`.
 Write your persistencyDir in `persistencyDir=`, it must always exist because when the client will be registered to astarte by the SDK, every authentication file will be stored there. If `persistencyDir` folder will be deleted, the device won't be able to authenticate, and a QNetwork error will be returned by the client.
 
 ### Writing a client for Astarte
-####First initialize your device:
+#### First initialize your device:
 When a Device connects successfully, it must subscribe to its server Interfaces. The SDK takes care of this detail and exposes a higher level interface.
 Create a new Qt5 project and add the Astarte's libraries in the .pro file:
 ```
