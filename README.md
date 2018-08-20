@@ -174,7 +174,8 @@ Due to how triggers work, it is fundamental to install the trigger before a devi
 
 ### Installing necessary packages
 
-To compile and install the Astarte SDK for QT5 framework, some packages are required: `libqt5serialport5-dev` `libmosquittopp-dev` `qt5-qmake` `qt5-default` `cmake` `build-essential` `libssl-dev` `git`. After installing those packages, download `Astarte Qt5 Device SDK` from GitHub.
+To compile and install the Astarte SDK for QT5 framework, some packages are required: `libqt5serialport5-dev` `libmosquittopp-dev` `qt5-qmake` `qt5-default` `cmake` `build-essential` `libssl-dev` `git`. After installing those packages, download `Astarte Qt5 Device SDK` from GitHub:
+
 ```git clone https://github.com/astarte-platform/astarte-device-sdk-qt5 ```
 
 After downloading the sdk, move inside its folder and run the following commands to build and install it:
