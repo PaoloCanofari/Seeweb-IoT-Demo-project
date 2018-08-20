@@ -58,24 +58,33 @@ The following example is the JSON document which describes the interface used in
 
 ```
 {
-  "data": {
-      "version_minor": 1,
+    "data": {
+      "version_minor": 2,
       "version_major": 0,
-      "type": "datastream",
+      "type": "properties",
       "ownership": "device",
       "mappings": [
-          {
-              "type": "double",
-              "endpoint": "/humidity"
-          },
-          {
-              "type": "integer",
-              "endpoint": "/temperature"
-          }
+        {
+          "type": "integer",
+          "path": "/myValue",
+          "description": "This is quite an important value."
+        },
+        {
+          "type": "integer",
+          "path": "/myBetterValue",
+          "description": "A better revision, introduced in minor 2, supported only by some devices"
+        },
+        {
+          "type": "boolean",
+          "path": "/awesome",
+          "allow_unset": true,
+          "description": "Introduced in minor 1, tells you if the device is awesome. Optional."
+        }
       ],
-      "interface_name": "com.api.sviluppo.Sensori"
-  }
+      "interface_name": "com.my.Interface1"
+    }
 }
+
 ```
 
 
@@ -90,14 +99,6 @@ Once Postman is installed, select the POST protocol and write your path to inter
 ```
 <realm name>.api.<your astarte domain>/v1/<realm name>/interfaces/
 ```
-
-In this project, we'll use the following path:
-
-
-```
-https://sviluppo.api.seewebiot.com/realm/v1/sviluppo/interfaces/
-```
-
 
 After typing the interface url, set the authorization type to `Bearer Token`, and insert your personal token (REALM type), you will get every necessary token after buying astarte service.
 
