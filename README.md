@@ -220,9 +220,8 @@ Now add the header file in your main class:
 ```
 #include <AstarteDeviceSDK.h>
 #include <HemeraCore/Operation>
-```
-At this point, everything is ready to start writing the code! Here's a little example from our code:
-```
+```At this point, everything is ready to start writing the code! Here's a little example from our code:```
+
 ```
 sdk_Init::sdk_Init(){			//main function
 
@@ -249,8 +248,9 @@ void sdk_Init::checkInitResult(Hemera::Operation *op){
 void sdk_Init::handleIncomingData(const QByteArray &interface, const QByteArray &path, const QVariant &value){
     qDebug() << "Received data, interface: " << interface << "path: " << path << ", value: " << value << ", Qt type name: " << value.typeName();
 
-}
+} 
 ```
+
 It's also possibile to call `sendData(interface, path, value)` function in another class by passing the `m_sdk `object. This method has been used in our code, which first reads the json file in `data/data.json` (created by `data_collector.py`).
 
 ### Collecting data from arduino through serial
