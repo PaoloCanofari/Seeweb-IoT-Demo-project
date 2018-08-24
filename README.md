@@ -74,7 +74,8 @@ The following example is the JSON document which describes the interface used in
           "path": "/myBetterValue",
           "description": "A better revision, introduced in minor 2, supported only by some devices"
         },
-        {
+        {sudo pip install pyserial
+
           "type": "boolean",
           "path": "/awesome",
           "allow_unset": true,
@@ -257,4 +258,4 @@ It's also possibile to call `sendData(interface, path, value)` function in anoth
 
 ### Collecting data from arduino through serial
 
-After assembling the circuit (available in `circuit/`) and uploading code to arduino, launch the script `data_collector.py` using python3 interpreter. If the script reads arduino data without errors, you can start your astarte client.
+After assembling the circuit (available in `circuit/`) and uploading code to arduino, run the command `sudo pip install pyserial` to install necessary libraries on your system and launch the script `data_collector.py` using python3 interpreter. If the script reads arduino data without errors, you can start your astarte client.
