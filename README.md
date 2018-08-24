@@ -227,7 +227,7 @@ At this point, everything is ready to start writing the code! Here's a little ex
 ```
 sdk_Init::sdk_Init(){			//main function
 
-    m_sdk = new AstarteDeviceSDK(QStringLiteral("/path/to/transport-astarte.conf"), QStringLiteral("/path/to/interfaces"), deviceId);
+    m_sdk = new AstarteDeviceSDK(QStringLiteral("/path/to/transport-astarte.conf"); QStringLiteral("/path/to/interfaces"), deviceId);
     connect(m_sdk->init(), &Hemera::Operation::finished, this, &AstarteStreamQt5Test::checkInitResult);
     connect(m_sdk, &AstarteDeviceSDK::dataReceived, this, &AstarteStreamQt5Test::handleIncomingData);
 }
