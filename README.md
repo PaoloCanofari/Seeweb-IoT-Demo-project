@@ -259,3 +259,14 @@ It's also possibile to call `sendData(interface, path, value)` function in anoth
 ### Collecting data from arduino through serial
 
 After assembling the circuit (available in `circuit/`) and uploading code to arduino, run the command `sudo pip install pyserial` to install necessary libraries on your system and launch the script `data_collector.py` using python3 interpreter. If the script reads arduino data without errors, you can start your astarte client.
+
+### Use our Grafana_based Dashboard Serivce
+
+We provide a dashboard service to display your data and device status in cool charts!
+
+#### Create panels in your Grafana admin panel
+
+Access to your Grafana admin panel using the url we'll provide (Astarte Datasource will already have been installed), and create a new **Dashboard**.
+You can now add new panels in your dashboard, choose Astarte Datasource and fill the query parameters with your Astarte data (realm path, device ID, interface, data path). Repeat this process for every panel.
+At this point it's necessary to create a new API token with viewer role(It will be shown only one time, so copy it somewhere).
+You can now access to our dashboard service url and set up your account dashboard and Devices!
