@@ -223,6 +223,7 @@ Now add the header file in your main class:
 ```
 At this point, everything is ready to start writing the code! Here's a little example from our code:
 ```
+```
 sdk_Init::sdk_Init(){			//main function
 
     m_sdk = new AstarteDeviceSDK(QStringLiteral("/path/to/transport-astarte.conf"), QStringLiteral("/path/to/interfaces"), deviceId);
