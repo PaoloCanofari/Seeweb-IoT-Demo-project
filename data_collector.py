@@ -56,7 +56,7 @@ def main():
 	    print("Attempt to read")
 	    time.sleep(2)
 
-	    output = ser.readline()
+	    output = ser.read(10)
 	    print('Reading: ', output)
 
 	    if "Arduino".encode() in output:
