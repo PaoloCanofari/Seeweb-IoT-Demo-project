@@ -77,7 +77,7 @@ The following example is the JSON document which describes the interface used in
           "path": "/myBetterValue",
           "description": "A better revision, introduced in minor 2, supported only by some devices"
         },
-        {sudo pip install pyserial
+        {
 
           "type": "boolean",
           "path": "/awesome",
