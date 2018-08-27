@@ -1,4 +1,6 @@
 /*
+ * Author: Paolo Canofari
+ *
  * Copyright (C) 2018 Seeweb Srl
  *
  * This file is part of SeewebIoT.
@@ -47,7 +49,7 @@ public:
 
     //device interface
     QByteArray interface = "INTERFACE_NAME_HERE";
-    
+
     //device ID
     QString device = "DEVICE_ID_HERE";
 

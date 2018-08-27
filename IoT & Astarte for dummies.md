@@ -272,8 +272,8 @@ our client first reads a JSON file located in (data/data.json) containing Arduin
 To set your device ID and the interface name, edit the file sdk_init.h. Once done, compile the code with the following commands:
 
 ```
-qmake
-make
+$ qmake
+$ make
 ```
 
 To start the client, type `./SeewebIoT`, it will connect to Astarte through the defined interface and publish the data.
@@ -284,7 +284,7 @@ After assembling the circuit (available in `circuit/`) and uploading code to ard
 
 ### Use our Grafana_based Dashboard Serivce
 
-We provide a dashboard service to display your data and device status in cool charts!
+We provide a dashboard service to display your data in coll charts and your device status!
 
 #### Create panels in your Grafana admin panel
 

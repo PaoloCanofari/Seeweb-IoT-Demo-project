@@ -1,4 +1,6 @@
 /*
+ * Author: Paolo Canofari
+ *
  * Copyright (C) 2018 Seeweb Srl
  *
  * This file is part of SeewebIoT.
@@ -50,4 +52,3 @@ data_sender::data_sender(sdk_Init *s)
     }
 
 }
-
