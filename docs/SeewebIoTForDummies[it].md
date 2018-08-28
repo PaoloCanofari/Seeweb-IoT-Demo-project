@@ -272,4 +272,4 @@ $ make
 Lo schema del circuito e il codice per arduino sono disponibili in `/src/arduino_code`. Il dispositivo monitorerà i valori di temperatura, umidità, intensità dei raggi UV e presenza di gas dannosi nell'aria, inviandoli via seriale a Raspberry Pi, quest'ultimo eseguendo lo script `data_collector.py` leggerà i valori restituiti da Arduino e dal sensore SDS011, salvandoli nel file `/data/data.json`.
 
 ## Utilizzare grafana per creare grafici dai dati raccolti
-Sul proprio host sarà installato `Grafana server`, il cui pannello sarà accessibile attraverso l'URl fornito
+Sul proprio host sarà installato `Grafana server`, il cui pannello sarà accessibile attraverso l'URL fornito 
