@@ -271,3 +271,35 @@ Circuit scheme and Arduino code are available in `/src/arduino_code`. Arduino bo
 
 ## Use Grafana to draw charts out of received value
 `Grafana Server` will already be installed on your host. Grafana control panel will be accessible through URL and credentials provided at time of purchase. Astarte datasource plugin will be already configured. It will be possible to create new dashboard and panels. To add a new panel you have to select chart type, choose datasource and set query parameters (Device ID, interface name, data path).
+
+## PHP callback page example
+
+Triggers that make HTTP POST requests to a URL can be managed simply through PHP pages. Below is a sample script that saves data sent via HTTP POST.
+
+```
+<?php
+// get the POST body with php://input
+$received = file_get_contents("php://input");
+
+// encode to json
+$json_output = json_decode($received, true);
+
+// save json data to a file
+$file_handle = fopen('over_temp.json', 'w');
+fwrite($file_handle, $received);
+fclose($file_handle);
+?>
+```
+The triggers provide JSON format all the data concerning the event that cause it to be activated in JSON format. These are read from the script and saved in a JSON document. The following is an example of the data provided by a trigger triggered by the `device_connected` event:
+
+```
+{
+		"timestamp":"2018-08-17T13:04:42.706575Z",
+		"event":
+		{
+			"type":"device_connected",
+			"device_ip_address":"212.25.179.137"
+		},
+		"device_id":"2UZn1kJYQRutYe4Pk9HR_Q"
+	}
+```
