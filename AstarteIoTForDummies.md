@@ -1,6 +1,9 @@
 # An easy guide to use Astarte with an example of IoT project
 
-This guide aims to explain how to implement Astarte platform in your IoT projects. An Air quality monitoring example project made with Arduino and Raspberry PI will be used to make the concept clearer.
+This guide aims to explain how to implement Seeweb Astarte solution in your IoT projects. An Air quality monitoring example project made with Arduino and Raspberry PI will be used to make the concept clearer.
+
+###### NOTICE
+Realm URL, tokens and dashboard credentials are provided by Seeweb when IoT service will be activated. Grafana server will be already installed on your Host.
 
 ## Hardware used in this guide
 
@@ -174,6 +177,14 @@ Installing a trigger is easy. Simply make a HTTP POST to your realm url (adding 
 
 ###### NOTICE:
 Due to how triggers work, it is fundamental to install the trigger before a device connects. Doing otherwise will cause the trigger to kick in at a later time, and as such no events will be streamed for a while.
+
+### Get data from Astarte
+
+To retrieve data from your astarte Realm, make a HTTP GET request at the following URL with Postman, authenticating with `AppEngine` token:
+
+`<realm name>.api.<your astarte domain>/v1/<realm name>/devices/<your deviceid>/interfaces/<interfaceName>/<DataPath>`
+
+Astarte will answer with a JSON document containig all registered data on provided device's interface.
 
 ## Getting ready to code Astarte client for straming data
 
