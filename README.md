@@ -8,17 +8,17 @@ Realm URL, tokens and dashboard credentials are provided by Seeweb when IoT serv
 
 ## Hardware used in this project
 
-	* Raspberry Pi zero
-	* Arduino NANO
-	* DHT22 humidity and temperature sensor
-	* MQ135 air quality sensor
-	* UV intensity sensor
-	* 5V to 3.3V logic converter circuit
+* Raspberry Pi zero
+* Arduino NANO
+* DHT22 humidity and temperature sensor
+* MQ135 air quality sensor
+* UV intensity sensor
+* 5V to 3.3V logic converter circuit
 
 ## Software used in this project
 
-	* Our Astarte client
-	* Astarte SDK for QT5
-	* QT5 IDE (Open Source or Commercial License)
-	* Arduino IDE
-	* POSTMAN
+* Our Astarte client
+* Astarte SDK for QT5
+* QT5 IDE (Open Source or Commercial License)
+* Arduino IDE
+* POSTMAN
