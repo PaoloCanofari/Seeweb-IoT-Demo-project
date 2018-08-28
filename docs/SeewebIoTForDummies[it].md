@@ -173,9 +173,7 @@ $ make install
 
 ### Generare il device ID e creare il file di configurazione
 Ogni device deve essere provvisto di un ID che può essere generato eseguendo `./generate-astarte-device-id`. Copiare l'ID generato e creare una nuova cartella per il file di configurazione:
-```
-$ mkdir astarte-device-DEVICE_ID_HERE-conf
- ```
+```$ mkdir astarte-device-DEVICE_ID_HERE-conf  ```
 Ora è necessario creare il file di configurazione `transport-astarte.conf`, contenente il testo seguente:
 
 ```
