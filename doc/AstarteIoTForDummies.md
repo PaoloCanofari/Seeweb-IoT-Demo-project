@@ -287,7 +287,11 @@ $ qmake
 $ make
 ```
 
-### Collecting data from arduino through serial
+## Collecting data from arduino through serial using Raspberry PI
+
+### Assembling the circuit
+
+Assembling
 
 After assembling the circuit (available in `circuit/`) and uploading code to arduino, move to Raspberry PI and run the command `sudo pip install pyserial` to install necessary libraries on your system and launch the script `data_collector.py` using python3 interpreter. If the script reads arduino data without errors, you can start your astarte client.
 
