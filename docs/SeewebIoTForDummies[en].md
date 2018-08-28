@@ -264,21 +264,3 @@ To set your device ID and the interface name, edit the file `sdk_init.h`. Once d
 $ qmake
 $ make
 ```
-
-## Collecting data from arduino through serial using Raspberry PI
-
-### Assembling the circuit
-
-The circuit is available in `src/arduino_code/circuit/`, it's really easy to assemble, after uploading code to arduino and connecting it to Raspberry PI, connect to Raspberry PI.
-Launch the script `data_collector.py` using python3 interpreter. If the script reads arduino data without errors, you can start your astarte client. After registering your device, the client will start publishing data.
-
-### Use our Grafana_based Dashboard Serivce
-
-We provide a dashboard service to display your data in coll charts and your device status!
-
-#### Create panels in your Grafana admin panel
-
-Access to your Grafana admin panel using the url we'll provide (Astarte Datasource will already have been installed), and create a new **Dashboard**.
-You can now add new panels in your dashboard, choose Astarte Datasource and fill the query parameters with your Astarte data (realm path, device ID, interface, data path). Repeat this process for every panel.
-At this point it's necessary to create a new API token with viewer role(It will be shown only one time, so copy it somewhere).
-You can now access to our dashboard service url and set up your account dashboard and Devices!
