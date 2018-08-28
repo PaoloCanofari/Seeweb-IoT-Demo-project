@@ -1,4 +1,4 @@
-# An easy guide to use Astarte with our IoT project
+# An easy guide to use Astarte with an example of IoT project
 
 This guide aims to explain how to implement Astarte platform in your IoT projects. An Air quality monitoring example project made with Arduino and Raspberry PI will be used to make the concept clearer.
 
@@ -13,7 +13,7 @@ This guide aims to explain how to implement Astarte platform in your IoT project
 
 ## Software used in this guide
 
-	1) Astarte
+	1) Our Astarte client
 	2) Astarte SDK for QT5
 	3) QT5 IDE (Open Source or Commercial License)
 	4) Arduino IDE
@@ -82,7 +82,7 @@ The following example is the JSON document which describes the interface used in
           "type": "boolean",
           "path": "/awesome",
           "allow_unset": true,
-          "description": "Introduced in minor 1, tells you if the device is awesome. Optional."
+          "description": "Introduced in minor 1, tells you if device is awesome. Optional."
         }
       ],
       "interface_name": "com.my.Interface1"
@@ -269,18 +269,16 @@ It's also possibile to call `sendData(interface, path, value)` function in anoth
 
 To use our source code is easy, you only need to edit few lines to set up your DEVICE ID and your Interface name, but first it's necessary to explain its logic:
 our client first reads a JSON file located in (data/data.json) containing Arduino sensors data, then once connection between client and Astarte has been established, data will be sent.
-To set your device ID and the interface name, edit the file sdk_init.h. Once done, compile the code with the following commands:
+To set your device ID and the interface name, edit the file `sdk_init.h`. Once done, compile the code with the following commands:
 
 ```
 $ qmake
 $ make
 ```
 
-To start the client, type `./SeewebIoT`, it will connect to Astarte through the defined interface and publish the data.
-
 ### Collecting data from arduino through serial
 
-After assembling the circuit (available in `circuit/`) and uploading code to arduino, run the command `sudo pip install pyserial` to install necessary libraries on your system and launch the script `data_collector.py` using python3 interpreter. If the script reads arduino data without errors, you can start your astarte client.
+After assembling the circuit (available in `circuit/`) and uploading code to arduino, move to Raspberry PI and run the command `sudo pip install pyserial` to install necessary libraries on your system and launch the script `data_collector.py` using python3 interpreter. If the script reads arduino data without errors, you can start your astarte client.
 
 ### Use our Grafana_based Dashboard Serivce
 
