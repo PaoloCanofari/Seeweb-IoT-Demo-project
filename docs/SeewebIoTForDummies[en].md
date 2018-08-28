@@ -257,7 +257,7 @@ It's also possibile to call `sendData(interface, path, value)` function in anoth
 ### B) Use our open source client
 
 To use our source code is easy, you only need to edit few lines to set up your DEVICE ID and your Interface name, but first it's necessary to explain its logic:
-our client first reads a JSON file located in (data/data.json) containing Arduino sensors data, then once connection between client and Astarte has been established, data will be sent.
+our client first reads a JSON file located in (data/data.json) containing Arduino sensors data, then once connection between client and Astarte has been established, data will be sent in the interface path data path corresponding to value index name.
 To set your device ID and the interface name, edit the file `sdk_init.h`. Once done, compile the code with the following commands:
 
 ```
