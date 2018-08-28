@@ -271,3 +271,34 @@ Lo schema del circuito e il codice per arduino sono disponibili in `/src/arduino
 
 ## Utilizzare grafana per creare grafici dai dati raccolti
 Sul proprio host sarà installato `Grafana server`, il cui pannello di controllo sarà accessibile attraverso l'URL e le credenziali fornite al momento dell'acquisto. Nel pannello di controllo sarà possibile creare una nuova dashboard e dei pannelli, vi è già disponibile il plugin che permette di avere Astarte datasource. Per aggiungere un nuovo pannello, basterà scegliere il tipo di grafico e inserire i dati del device e dell'interfaccia nella query.
+
+## Esempio pagina di callback in PHP
+I trigger che effettuano richieste HTTP POST verso un URL, possono essere gestiti semplicemente tramite pagine PHP. Di seguito uno script di esempio che salva i dati inviati tramite HTTP POST.
+
+```
+<?php
+// get the POST body with php://input
+$received = file_get_contents("php://input");
+
+// encode to json
+$json_output = json_decode($received, true);
+
+// save json data to a file
+$file_handle = fopen('over_temp.json', 'w');
+fwrite($file_handle, $received);
+fclose($file_handle);
+?>
+```
+I trigger forniscono in formato JSON tutti i dati riguardanti l'evento che ne causano l'attivazione in formato JSON. Questi vengono letti dallo script e salvati in un documento JSON. Di seguito un esempio dei dati forniti da un trigger attivato dall'evento `device_connected`:
+
+```
+{
+		"timestamp":"2018-08-17T13:04:42.706575Z",
+		"event":
+		{
+			"type":"device_connected",
+			"device_ip_address":"212.25.179.137"
+		},
+		"device_id":"2UZn1kJYQRutYe4Pk9HR_Q"
+	}
+```

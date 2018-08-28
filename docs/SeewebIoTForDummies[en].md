@@ -264,3 +264,10 @@ To set your device ID and the interface name, edit the file `sdk_init.h`. Once d
 $ qmake
 $ make
 ```
+
+## Use our example project
+### Assemble ciruit
+Circuit scheme and Arduino code are available in `/src/arduino_code`. Arduino board will grab data from sensors and will send them to Raspberry Pi in JSON format. Raspberry Pi will read data through serial from both Arduino and SDS011 (PM sensor) and save it to `/data/data.json` using python3 script `data_collector.py`.
+
+## Use Grafana to draw charts out of received value
+`Grafana Server` will already be installed on your host. Grafana control panel will be accessible through URL and credentials provided at time of purchase. Astarte datasource plugin will be already configured. It will be possible to create new dashboard and panels. To add a new panel you have to select chart type, choose datasource and set query parameters (Device ID, interface name, data path).
