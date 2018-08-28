@@ -24,7 +24,7 @@ Interfaces have a predefined type, which can be either property or datastream. E
 
 **Properties:** represent a persistent, stateful synchronized state with no concept of history and timestamping. Properties are useful when dialing with settings, states or policies/rules. They are stored in a key-value fashion, and grouped according to their interface, and they are idempotent in the REST API semantics. Rather than being able to act on a stream like in the datastream case, properties can be retrieved, or can be used as a trigger whenever they change. Values in a properties interface can be unset (or deleted according to the http jargon): to allow such a thing, the interface must have its allow_unset property set to true.
 
-The owner of and interface has a write-only access to it, whereas other actors have read-only access. Interface ownership can be either `device` or `server`
+The owner of an interface has a write-only access to it, whereas other actors have read-only access. Interface ownership can be either `device` or `server`
 Every interface must have an array of mappings. Each mapping describes an endpoint which is resolved to a path, it is strongly typed, and can have additional options. Any endpoint can support any number of parameters.
 
 This is a list of every endpoint type suppported:
@@ -38,7 +38,7 @@ This is a list of every endpoint type suppported:
 	- datetime
 	- doublearray
 
-The following example is the JSON document which describes the interface used in this project:
+The following example is the JSON document which describes an example interface:
 
 ```
 {
@@ -75,7 +75,7 @@ The following example is the JSON document which describes the interface used in
 
 ## Managing Interfaces
 
-To manage interfaces we recommend to use Postman, which will make things easier and fasterd.
+This part of the guide uses Postman to speed up and simplify the use of HTTP requests.
 
 ### Installing an interface
 
@@ -85,11 +85,11 @@ Once Postman is installed, select the POST protocol and write your path to inter
 <realm name>.api.<your astarte domain>/v1/<realm name>/interfaces/
 ```
 
-After typing the interface url, set the authorization type to `Bearer Token`, and insert your personal token (REALM type), you will get every necessary token after buying astarte service.
+After typing the interface url, set the authorization type to `Bearer Token`, and insert your personal token (REALM type), provided at time of purchase.
 
-Now paste your JSON document which describes your interface in the `Body` section. Now send the call, it should return a 201 Created or an error. Most common failure causes are:
+Now paste your JSON document which describes your interface in the `Body` section. At this point it's possible to send the call, it should return a 201 Created or an error. Most common failure causes are:
 
-	- The interface alrastarteeady exists in this realm
+	- The interface already exists in this realm
 	- The interface schema fails validation
 	- The interfaces path is wrong
 
@@ -120,7 +120,7 @@ To update an interface, issue a PUT protocol, with the same installation paramet
 If a device upgrades one of its interfaces to a new major version, the previous interface is parked and its data remains dangling.
 Every API call, trigger or reference to the interface will always target the major version declared in the introspection, regardless of the fact that a more recent version might have been installed in the realm.
 
-In case of updating an interface, it's required to copy the updated JSON and paste it in the `/interfaces` folder in the client path, as `<interface Name>.json`.
+The interface introspection for each device must be inserted in JSON format in the `/ interfaces` directory, located in the same path as the client's execution file.
 
 ## Triggers
 Triggers in Astarte are the go-to mechanism for generating push events. In contrast with AppEngine’s REST APIs, Triggers allow users to specify conditions upon which a custom payload is delivered to a recipient, using a specific `action`, which usually maps to a specific transport/protocol, such as HTTP.
@@ -156,7 +156,7 @@ Installing a trigger is easy. Simply make a HTTP POST to your realm url (adding 
 ###### NOTICE:
 Due to how triggers work, it is fundamental to install the trigger before a device connects. Doing otherwise will cause the trigger to kick in at a later time, and as such no events will be streamed for a while.
 
-### Get data from Astarte
+### Get data from your Realm
 
 To retrieve data from your astarte Realm, make a HTTP GET request at the following URL with Postman, authenticating with `AppEngine` token:
 
