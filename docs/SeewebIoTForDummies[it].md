@@ -124,7 +124,7 @@ Una condizione definisce l'evento (o la catena di eventi) per cui viene attivata
 Un'azione definisce il modo in cui un evento dovrebbe essere inviato all'esterno (es. una richiesta HTTP POST su un certo URL). Inoltre, molte azioni hanno un payload che contiene il body dell'evento.
 
 ### Installazione di un trigger
-installare un trigger è semplice: basta effettuare una richiesta HTTP POST con Postman all' endpoint `/triggers` del percorso del realm, con un documento JSON nel body della richiesta. Tutta la documentazione ufficiale sulla configurazione dei trigger è disponibile a questo [link](https://docs.astarte-platform.org/snapshot/api/index.html?urls.primaryName=Realm%20Management%20API). Nella seguente configurazione di esempio, viene effettuata una richiesta POST ogni volta che il device si connette alla piattaforma.
+installare un trigger è semplice: basta effettuare una richiesta HTTP POST con Postman all' endpoint `/triggers` del percorso del realm, con un documento JSON nel body della richiesta. Esistono due tipi di trigger: `device_trigger` e `data_trigger`, il primo viene gestito da eventi legati al device, il secondo da eventi legati ai valori presenti nel percorso specificato all'interno dell'interfaccia. Tutta la documentazione ufficiale sulla configurazione dei trigger è disponibile a questo [link](https://docs.astarte-platform.org/snapshot/api/index.html?urls.primaryName=Realm%20Management%20API). Nella seguente configurazione di esempio, viene effettuata una richiesta POST ogni volta che il device si connette alla piattaforma.
 
 ```
 {
@@ -138,7 +138,30 @@ installare un trigger è semplice: basta effettuare una richiesta HTTP POST con 
         ],
         "name": "mytrigger_seewebIoT",
         "action": {
-            "http_post_url": "http://example.com"
+            "http_post_url": "http://example.com/status_trigger.php"
+        }
+    }
+}
+```
+Di seguito vi è anche un esempio di trigger che si attiva ogni volta che il valore misurato dei raggi UV supera 0.17 mV/cm², indicando il sorgere del sole.
+
+```
+{
+    "data": {
+        "simple_triggers": [
+            {
+                "type": "data_trigger",
+                "on": "incoming_data",
+                "interface_name": "INTERFACE_NAME_HERE",
+                "interface_major": "2",
+                "match_path":"/uvint",
+                "known_value":"0.17",
+                "value_match_operator": ">="
+            }
+        ],
+        "name": "data_Trigger",
+        "action": {
+            "http_post_url": "http://example.com/data_trigger.php"
         }
     }
 }

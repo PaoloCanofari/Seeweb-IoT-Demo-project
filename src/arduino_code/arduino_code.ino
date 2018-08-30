@@ -24,7 +24,6 @@
 #define DHTTYPE DHT22   // DHT 22  (AM2302)
 DHT dht(DHTPIN, DHTTYPE); //// Initialize DHT sensor for normal 16mhz Arduino
 
-//answer from QT client
 
 //Variables
 float hum;  //Stores humidity value
@@ -42,6 +41,25 @@ void setup() {
   Serial.println("I'm Arduino");
 
 }
+
+int averageAnalogRead(int pinToRead)
+{
+  byte numberOfReadings = 8;
+  unsigned int runningValue = 0;
+
+  for (int x = 0 ; x < numberOfReadings ; x++)
+    runningValue += analogRead(pinToRead);
+  runningValue /= numberOfReadings;
+
+  return (runningValue);
+}
+
+//The Arduino Map function but for floats
+float mapfloat(float x, float in_min, float in_max, float out_min, float out_max)
+{
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
 //Dichiaro la variabile di tipo string str in cui verrà inserito il comando ricevuto da seriale
 String str;
 
@@ -68,31 +86,16 @@ void loop() {
 
     //print data in JSON format
 
-    Serial.println(String("\"{ \"humidity\": ") + hum + String(", \"Temp\": ") + temp + String(", \"mqVal\": ") + mqVal + String(", \"UVIntensity\": ") + uvIntensity + String(" }\""));
+    if(hum < 50){
+      
+      Serial.println((String)String("\"{ \"humidity\": ") + hum + String(", \"Temp\": ") + temp + String(", \"mqVal\": ") + mqVal + String(", \"UVIntensity\": ") + uvIntensity + String(" }\""));
+      delay(1000); //Delay 2 sec.
+    }
 
-    delay(2000); //Delay 2 sec.
   }
   else {
     //Do alla variabile str il valore corrispondente al comando ricevuto da seriale
     str = Serial.readStringUntil('\n');
     Serial.println("I'm Arduino");
   }
-}
-
-int averageAnalogRead(int pinToRead)
-{
-  byte numberOfReadings = 8;
-  unsigned int runningValue = 0;
-
-  for (int x = 0 ; x < numberOfReadings ; x++)
-    runningValue += analogRead(pinToRead);
-  runningValue /= numberOfReadings;
-
-  return (runningValue);
-}
-
-//The Arduino Map function but for floats
-float mapfloat(float x, float in_min, float in_max, float out_min, float out_max)
-{
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
