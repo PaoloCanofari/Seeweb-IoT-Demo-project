@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 '''Author: Paolo Canofari
 
 Copyright (C) 2018 Seeweb Srl
@@ -17,7 +17,6 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with SeewebIoT.  If not, see <http://www.gnu.org/licenses/>.'''
 
-#!/usr/bin/env python3
 import serial.tools.list_ports
 import time
 import serial
@@ -68,32 +67,34 @@ def writedata(data):
 
 
 def main():
-	i = 0
-	while i < len(result):
+    i = 0
+    while i < len(result):
 
-	    ser = serial.Serial(result[i], 9600, dsrdtr=True, rtscts=True)
-	    print("Attempt to read")
-	    time.sleep(2)
+        ser = serial.Serial(result[i], 9600, dsrdtr=True, rtscts=True)
+        print("Attempt to read")
+        time.sleep(2)
+        try:
+            output = ser.read(10)
+        except Exception as e:
+            pass
+        print('Reading: ', output)
 
-	    output = ser.read(10)
-	    print('Reading: ', output)
+        if "Arduino".encode() in output:
+            ser.write("OK".encode())
+            print("Arduino found on port: ", result[i])
 
-	    if "Arduino".encode() in output:
-	        ser.write("OK".encode())
-	        print("Arduino found on port: ", result[i])
+            time.sleep(2)
+            while True:
+                arduino_data = ser.readline().decode('ascii')
+                time.sleep(2)
+                nova_data = ""
+                if i == 1:
+                    nova_data = read_nova_dust_sensor(result[0])
 
-	        time.sleep(2)
-	        while True:
-	            arduino_data = ser.readline().decode('ascii')
-	            time.sleep(2)
-	            nova_data = ""
-	            if i == 1:
-	                nova_data = read_nova_dust_sensor(result[0])
-
-	            elif i == 0:
-	                nova_data = read_nova_dust_sensor(result[1])
-	            writedata("{" + arduino_data + "," + nova_data + " }")
-	    i = i + 1
+                elif i == 0:
+                    nova_data = read_nova_dust_sensor(result[1])
+                writedata("{" + arduino_data + "," + nova_data + " }")
+        i = i + 1
 
 scan_ports()
 main()
