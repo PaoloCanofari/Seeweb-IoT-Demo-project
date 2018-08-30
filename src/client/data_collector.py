@@ -74,7 +74,7 @@ def main():
         print("Attempt to read")
         time.sleep(2)
         try:
-            output = ser.read(10)
+            output = ser.read(20)
         except Exception as e:
             pass
         print('Reading: ', output)
