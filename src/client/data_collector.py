@@ -73,10 +73,8 @@ def main():
         ser = serial.Serial(result[i], 9600, dsrdtr=True, rtscts=True)
         print("Attempt to read")
         time.sleep(2)
-        try:
-            output = ser.read(20)
-        except Exception as e:
-            pass
+        
+        output = ser.read(20)
         print('Reading: ', output)
 
         if "Arduino".encode() in output:
