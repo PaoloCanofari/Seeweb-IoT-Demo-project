@@ -1,5 +1,4 @@
 # Seeweb IoT demo project
-## What is it?
 SeewebIoT demo project is an example project with the aim of explain how to use SeewebIoT service, Qt5 and raspberry Pi to build an IoT project. Even if you're not an expert, you'll be able to make your first IoT projet easily. The step by step guide to setup your first IoT project is available in `docs/`.
 ### Hardware used in this project
 
