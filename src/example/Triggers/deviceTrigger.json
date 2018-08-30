@@ -1,0 +1,15 @@
+{
+    "data": {
+        "simple_triggers": [
+            {
+                "type": "device_trigger",
+                "on": "device_connected",
+                "device_id": "YOUR_ID_HERE"
+            }
+        ],
+        "name": "mytrigger_seewebIoT",
+        "action": {
+            "http_post_url": "http://example.com/status_trigger.php"
+        }
+    }
+}
