@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 '''Author: Paolo Canofari
 
 Copyright (C) 2018 Seeweb Srl
@@ -17,7 +17,6 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with SeewebIoT.  If not, see <http://www.gnu.org/licenses/>.'''
 
-#!/usr/bin/env python3
 import serial.tools.list_ports
 import time
 import serial
