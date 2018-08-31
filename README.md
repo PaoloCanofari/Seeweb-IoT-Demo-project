@@ -11,8 +11,10 @@ SeewebIoT demo project is an example project with the aim of explain how to use 
 
 ### Software used in this project
 
+* SeewebIoT
 * Astarte
 * Astarte SDK for QT5
 * QT5
 * Arduino IDE
-* POSTMAN
+* Postman
+* Laravel (Control Panel)
