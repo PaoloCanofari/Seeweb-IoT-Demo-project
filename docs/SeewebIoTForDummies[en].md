@@ -87,7 +87,9 @@ Once Postman is installed, select the POST protocol and write your path to inter
 
 After typing the interface url, set the authorization type to `Bearer Token`, and insert your personal token (REALM type), provided at time of purchase.
 
-Now paste your JSON document which describes your interface in the `Body` section. At this point it's possible to send the call, it should return a 201 Created or an error. Most common failure causes are:
+Now paste your JSON document which describes your interface in the `Body` section.
+![](SeewebIoTForDummies[en].assets/SeewebIoTForDummies[en]-e0d6799b.png)
+At this point it's possible to send the call, it should return a 201 Created or an error. Most common failure causes are:
 
 	- The interface already exists in this realm
 	- The interface schema fails validation
