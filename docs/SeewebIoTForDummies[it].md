@@ -82,8 +82,10 @@ All'interno di Postman selezionare il tipo di richiesta `POST` e scrivere l'URL 
 <realm name>.api.<your astarte domain>/v1/<realm name>/interfaces/
 ```
 Dopo aver inserito l'URL corretto, impostare il tipo di autorizzazione su `Baerer Token` e inserire il proprio token per l'accesso al REALM fornito al momento dell' acquisto.
+
+Nella sezione `Body` della richiesta, inserire il documento JSON descrivente la propria interfaccia.
 ![](SeewebIoTForDummies[it].assets/SeewebIoTForDummies[it]-e0d6799b.png)
-Nella sezione `Body` della richiesta, inserire il documento JSON descrivente la propria interfaccia. A questo punto è possibilie inviare la richiesta. La risposta sarà `201 Created` oppure un errore. Le cause più comuni agli errori possono essere:
+A questo punto è possibilie inviare la richiesta. La risposta sarà `201 Created` oppure un errore. Le cause più comuni agli errori possono essere:
 * L'interfaccia esiste già nel realm
 * Il documento JSON per la descrizione dell'interfaccia non è valido
 * Il percorso dell'interfaccia è errato
