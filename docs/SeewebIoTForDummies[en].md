@@ -136,7 +136,7 @@ A condition defines the event (or chain of events) upon which an action is trigg
 Actions are triggered by a matching condition. An Action defines how the event should be sent to the outer world (e.g. an http POST on a certain URL). In addition, most actions have a Payload, which carries the body of the event.
 
 ### Install a trigger
-Installing a trigger is easy. Simply make a HTTP POST to your realm url (adding `/triggers`), with JSON document in the request body. Every official documentation about the JSON configuration of a trigger is available at [this link](https://docs.astarte-platform.org/snapshot/api/index.html?urls.primaryName=Realm%20Management%20API). In this configuration example, a POST will be sent to a URL of our choice every time our device connects to astarte.
+Installing a trigger is easy. Simply make a HTTP POST to your realm url (adding `/triggers`), with JSON document in the request body. There are two types of triggers: `device_trigger` and` data_trigger`, the first is handled by events connected to the device, the second by events is a set of values in the path specified in the interface. Every official documentation about the JSON configuration of a trigger is available at [this link](https://docs.astarte-platform.org/snapshot/api/index.html?urls.primaryName=Realm%20Management%20API). In this configuration example, a POST will be sent to a URL of our choice every time our device connects to astarte. The following trigger configuration sends an `POST` request to a specific url every time the devices connects to the interface.
 ```
 {
     "data": {
@@ -150,6 +150,28 @@ Installing a trigger is easy. Simply make a HTTP POST to your realm url (adding 
         "name": "mytrigger_seewebIoT",
         "action": {
             "http_post_url": "http://example.com"
+        }
+    }
+}
+```
+The following is an example of a trigger that is activated whenever the measured value of the UV rays exceeds 0.17 mV / cm², indicating the sunrise.
+```
+{
+    "data": {
+        "simple_triggers": [
+            {
+                "type": "data_trigger",
+                "on": "incoming_data",
+                "interface_name": "INTERFACE_NAME_HERE",
+                "interface_major": "2",
+                "match_path":"/uvint",
+                "known_value":"0.17",
+                "value_match_operator": ">="
+            }
+        ],
+        "name": "data_Trigger",
+        "action": {
+            "http_post_url": "http://example.com/data_trigger.php"
         }
     }
 }
