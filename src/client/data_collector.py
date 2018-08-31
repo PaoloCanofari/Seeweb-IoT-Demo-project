@@ -91,7 +91,7 @@ def main():
 
                 elif i == 0:
                     nova_data = read_nova_dust_sensor(result[1])
-                writedata("{" + arduino_data + "," + nova_data + " }")
+                writedata(arduino_data + "," + nova_data + " }")
         i = i + 1
 
 scan_ports()

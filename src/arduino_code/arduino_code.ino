@@ -87,7 +87,7 @@ void loop() {
     //print data in JSON format
 
     if (temp < 50) {
-      Serial.println((String)String("\"{ \"humidity\": ") + hum + String(", \"Temp\": ") + temp + String(", \"mqVal\": ") + mqVal + String(", \"UVIntensity\": ") + uvIntensity + String(" }\""));
+      Serial.println((String)String("{ \"humidity\": ") + hum + String(", \"temperature\": ") + temp + String(", \"aqi\": ") + mqVal + String(", \"uvint\": ") + uvIntensity);
       delay(1000); //Delay 2 sec.
     }
 
