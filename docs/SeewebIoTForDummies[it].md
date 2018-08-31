@@ -296,7 +296,7 @@ Lo schema del circuito e il codice per arduino sono disponibili in `/src/arduino
 
 ## Utilizzare grafana per creare grafici dai dati raccolti
 Sul proprio host sarà installato `Grafana server`, il cui pannello di controllo sarà accessibile attraverso l'URL e le credenziali fornite al momento dell'acquisto. Nel pannello di controllo sarà possibile creare una nuova dashboard e dei pannelli, vi è già disponibile il plugin che permette di avere Astarte datasource. Per aggiungere un nuovo pannello, basterà scegliere il tipo di grafico e inserire i dati del device e dell'interfaccia nella query.
-
+![](SeewebIoTForDummies[it].assets/SeewebIoTForDummies[it]-ff6da115.png)
 ## Esempio pagina di callback in PHP
 I trigger che effettuano richieste HTTP POST verso un URL, possono essere gestiti semplicemente tramite pagine PHP. Di seguito uno script di esempio che salva i dati inviati tramite HTTP POST.
 
