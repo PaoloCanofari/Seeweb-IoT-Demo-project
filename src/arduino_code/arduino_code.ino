@@ -1,26 +1,26 @@
 /*
- * Copyright (C) 2018 Seeweb Srl
- *
- * This file is part of SeewebIoT.
- * SeewebIoT is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 2.1 of the License, or
- * (at your option) any later version.
- *
- * SeewebIoT is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with SeewebIoT.  If not, see <http://www.gnu.org/licenses/>.
- */
+   Copyright (C) 2018 Seeweb Srl
+
+   This file is part of SeewebIoT.
+   SeewebIoT is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Lesser General Public License as published by
+   the Free Software Foundation, either version 2.1 of the License, or
+   (at your option) any later version.
+
+   SeewebIoT is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public License
+   along with SeewebIoT.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 //Libraries
 #include <DHT.h>;
 
 //Constants for DHT22 sensor
-#define DHTPIN A2     // what pin we're connected to
+#define DHTPIN A1     // what pin we're connected to
 #define DHTTYPE DHT22   // DHT 22  (AM2302)
 DHT dht(DHTPIN, DHTTYPE); //// Initialize DHT sensor for normal 16mhz Arduino
 
@@ -72,7 +72,7 @@ void loop() {
     hum = dht.readHumidity();
     temp = dht.readTemperature();
 
-    mqVal = analogRead(0);       // read analog input pin 0
+    mqVal = analogRead(A2);       // read analog input pin 0
 
 
     //UV SENSOR
@@ -86,8 +86,7 @@ void loop() {
 
     //print data in JSON format
 
-    if(temp < 50){
-      
+    if (temp < 50) {
       Serial.println((String)String("\"{ \"humidity\": ") + hum + String(", \"Temp\": ") + temp + String(", \"mqVal\": ") + mqVal + String(", \"UVIntensity\": ") + uvIntensity + String(" }\""));
       delay(1000); //Delay 2 sec.
     }
