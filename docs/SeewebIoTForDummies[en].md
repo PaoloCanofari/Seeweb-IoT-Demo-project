@@ -327,3 +327,23 @@ The triggers provide JSON format all the data concerning the event that cause it
 		"device_id":"2UZn1kJYQRutYe4Pk9HR_Q"
 	}
 ```
+
+### Get dashboard ID & API token from Grafana panel
+
+To use the panel, you will first need to configure the dashboard on Grafana and create a token API. Once you have created a dashboard, you will be able to read its ID in the page URL.
+
+![](SeewebIoTForDummies[en].assets/SeewebIoTForDummies[en]-1f0a3597.png)
+
+Once you have made a note of the dashboard ID, you need to create a Token API. This operation can be performed under the `settings -> Api keys` entry.
+Once a key has been added, it will only be possible to display it at the moment of creation, so you have to take note.
+
+At this point you can add your dashboard to the panel under the appropriate menu item.
+
+![](SeewebIoTForDummies[en].assets/SeewebIoTForDummies[en]-8ecf7ca6.png)
+
+Now you will need to enter the required dashboard data. Once added, in the home page you can view all the panels in your dashboard. You can add more dashboards with the same procedure and choose which view to display the appropriate `selector`.
+
+### Ottenere lo status di un device tramite triggers
+
+To view the status of a device, you must first register it. To do this you can use the `DEVICES -> Register device` menu and enter the required data.
+At this point, the device will be visible in `DEVICES -> status Table`. By creating a `device_trigger` trigger with astarte and setting the target variable url to` <panel url> / status_trigger`, the status of the device will be updated automatically according to the chosen event (device_connected, device_disconnected or device_error).
