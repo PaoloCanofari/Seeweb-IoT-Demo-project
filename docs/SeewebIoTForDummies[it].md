@@ -333,3 +333,21 @@ I trigger forniscono in formato JSON tutti i dati riguardanti l'evento che ne ca
 		"device_id":"2UZn1kJYQRutYe4Pk9HR_Q"
 	}
 ```
+
+## Utilizzo del pannello open source (facoltativo)
+
+Per semplificare la gestione dei device e ottenere il loro status (connected, disconnected, error), è stato sviluppato un pannello open source basato su Laravel 5.
+E' necessario specificare che, prima di proseguire con la guida al suo utilizzo, vi è la necessità di creare un database utilizzando la query disponibile in `src/dashboard/Database creation SQL`. A questo punto, bisogna inserire le credenziali di un proprio account nella tabella `users`.
+
+Una volta creato il database, sarà possibile proseguire la guida senza ulteriori intoppi.
+
+### Ottenere dashboard ID e API token da Grafana
+
+Per utilizzare il pannello, sarà necessario configurare prima la dashboard su Grafana e creare un API token. Una volta creata una dashboard, sarà possibile leggerne l'ID nell'url della pagina.
+
+![](SeewebIoTForDummies[it].assets/SeewebIoTForDummies[it]-1f0a3597.png)
+
+Una volta presa nota dell'ID della dashboard, bisogna creare un API Token. E' possibile effettuare questa operazione sotto la voce `settings -> Api keys`.
+Una volta aggiunta una chiave, sarà possibile visualizarla solo nel momento della creazione, quindi bisogna appuntarsela.
+
+A questo punto è possibile aggiungere al pannello la propria dashboard sotto l'apposita voce del menu.
