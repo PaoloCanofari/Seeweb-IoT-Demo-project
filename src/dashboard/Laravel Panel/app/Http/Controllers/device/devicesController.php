@@ -18,10 +18,8 @@ class devicesController extends BaseController
        //get the HTTP post body
        $received = $req->input('arg');
        $email = $req->input('currentaccount');
-  /*   if (Schema::connection("accounts")->hasTable($email) == true) {
-         echo "FOUND";
-       } */
 
+       // if switch views, depending of the input message
        if($received == "status"){
          return view('devices')->with(['email' => $email]);
        }

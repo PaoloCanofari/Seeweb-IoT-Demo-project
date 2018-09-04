@@ -69,6 +69,7 @@ class loginController extends BaseController
 
       public function getPanels($email, $dashboradID, $url_request, $token){
 
+        // make HTTP POST request to grafana using token API. Every documentation at http://docs.grafana.org/http_api/dashboard/
         $dashboard_curl = $url_request."api/dashboards/uid/".$dashboradID;
 
         $authorization = "Authorization: Bearer ".$token;

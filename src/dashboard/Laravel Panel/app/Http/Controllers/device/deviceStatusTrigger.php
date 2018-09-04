@@ -33,12 +33,15 @@ class deviceStatusTrigger extends BaseController
          $check_id = DB::connection("mysql")->table("devices")->where(['Device_ID'=>$device_id])->get();
          if(count($check_id) > 0 ){
 
+           //if device ID has been found in Database table
+
            if($status == "device_connected")
            {
              //update existing row
              $check = DB::connection("mysql")->table("devices")->where(['Device_ID'=>$device_id])->update(['status' => "online"]);
            }
            elseif($status == "device_disconnected"){
+
              //update existing row
              $check = DB::connection("mysql")->table("devices")->where(['Device_ID'=>$device_id])->update(['status' => "offline"]);
            }

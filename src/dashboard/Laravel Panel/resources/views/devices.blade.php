@@ -7,15 +7,9 @@ use Illuminate\Http\Request;
 use DB;
 use Schema;
 
-//(echo $email;
-$devices = DB::connection("mysql")->table("devices")->where(["email" => $email])->get();
+//get object array from Database, wich contains current account devices data
 
-/*
-foreach ($devices as $key => $value) {
-  echo $value->ID;
-  echo $value->status;
-}
-*/
+$devices = DB::connection("mysql")->table("devices")->where(["email" => $email])->get();
 
 ?>
 <html>
@@ -104,6 +98,8 @@ function dashboard(){
 
 <br><br><br>
 
+<!-- if there are some devices, add them to a table-->
+
 <?php if (count($devices) > 0): ?>
   <table class="tg" align="center">
     <tr>
@@ -125,16 +121,16 @@ function dashboard(){
 
     @endforeach
   </table>
-<?php endif; ?>
 
-<br><br><br>
+  <br><br><br>
 
-<?php if (count($devices) > 0): ?>
   <div class="grid">
+
+    <!-- Check if error message has been passed from controller. If yes, print it-->
 
     @if(isset($msg) && strlen($msg) != 0)
       <h4 color="blue" style="color: green">{{$msg}}</h4>
-    @elseif(isset($error) &&strlen($error) != 0)
+    @elseif(isset($error) && strlen($error) != 0)
       <h4 class="shake" style="color: red">{{$error}}</h4>
     @endif
 

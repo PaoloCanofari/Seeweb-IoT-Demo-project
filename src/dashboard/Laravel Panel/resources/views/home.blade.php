@@ -24,6 +24,7 @@ iframe {
 <script>
 
 function create_frames(){
+  //when page loads, create a frame for every element of $panels array
 
   @if(!isset($error))
   <?php
@@ -40,18 +41,24 @@ function create_frames(){
 }
 
 function framesTimeUpdate() {
+
+  //update every frame src
+
   @if(!isset($error))
-  var e = document.getElementsByName('TimeRange')[0];
-  var value = e.options[e.selectedIndex].value;
-  var text = e.options[e.selectedIndex].text;
+  var select = document.getElementsByName('TimeRange')[0];
+
+  var value = select.options[select.selectedIndex].value;
+  var text = select.options[select.selectedIndex].text;
+
   document.getElementById("currentRange").innerHTML = "Current Time Range: " + text;
+
   if(value != "")
   {
     <?php
       foreach($panels as $p):
     ?>
-      document.getElementById("frame<?php print($p['id']);?>").src = '<?php print($url."?"."orgId=1&from="); ?>' + value + '<?php print("&to=now&panelId=".$p["id"]."&refresh=5s"); ?>';
-
+    // $url and $panels are passed by login controller
+    document.getElementById("frame<?php print($p['id']);?>").src = '<?php print($url."?"."orgId=1&from="); ?>' + value + '<?php print("&to=now&panelId=".$p["id"]."&refresh=5s"); ?>';
     <?php endforeach; ?>
   }
   @endif;
@@ -90,13 +97,14 @@ function getDashboardsIDs(){
             document.write(e);
         }
         <?php
-        //return $this->getPanels($key->email, $key->dashboard_id, $key->url, $key->token);
       }
     }
     ?>
 }
 
 function updateDashboard(){
+
+  //send post form to it's controller (check web.php routing)
   var select = document.getElementById("dashboardSelector")
   var value = select.options[select.selectedIndex].value;
 
@@ -180,21 +188,10 @@ function updateDashboard(){
   </span>
 </form>
 
-<p align="center"> Account: {{$email}}</p>    <p>Current Dashboard ID: {{$dashboardID}}</p>
+<p align="center"> Account: {{$email}}</p>
+<p align="center">Current Dashboard ID: {{$dashboardID}}</p>
 <p id="currentRange" align="center">Current Time Range: 1h</p>
 <br>
-
-
-  <!-- if the query request "refresh=Ns" (wehere N is number of seconds and s is seconds), is added and the option "to=" is set to "now",
-       the chart will auto refresh, without need to update the frame.
-       Of course, you need to add the same refresh option value in grafana admin panel.
-  <iframe id="humidity_frame" src="http://panel.seewebiot.it:3000/d-solo/fbqnYo5mz/seewebiot?orgId=1&from=now-1h&to=now&panelId=8&refresh=5s" width="800" height="300" frameborder="0"></iframe>
-  <iframe id="temperature_frame" src="http://panel.seewebiot.it:3000/d-solo/fbqnYo5mz/seewebiot?orgId=1&panelId=10&from=now-1h&to=now&refresh=5s" width="800" height="300" frameborder="0"></iframe>
-  <iframe id="airPollution_frame" src="http://panel.seewebiot.it:3000/d-solo/fbqnYo5mz/seewebiot?orgId=1&from=now-1h&to=now&panelId=6&refresh=5s" width="800" height="300" frameborder="0"></iframe>
-  <iframe id="UV_frame" src="http://panel.seewebiot.it:3000/d-solo/fbqnYo5mz/seewebiot?orgId=1&from=now-1h&to=now&panelId=12&refresh=5s" width="800" height="300" frameborder="0"></iframe>
-  <iframe id="pm10_frame" src="http://panel.seewebiot.it:3000/d-solo/fbqnYo5mz/seewebiot?orgId=1&from=now-1h&to=now&panelId=11&refresh=5s" width="800" height="300" frameborder="0"></iframe>
-  <iframe id="pm25_frame" src="http://panel.seewebiot.it:3000/d-solo/fbqnYo5mz/seewebiot?orgId=1&from=now-1h&to=now&panelId=4&refresh=5s" width="800" height="300" frameborder="0"></iframe>
--->
 
  @endif
 

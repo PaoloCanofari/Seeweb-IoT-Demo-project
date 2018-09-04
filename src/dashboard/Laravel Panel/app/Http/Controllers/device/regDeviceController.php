@@ -18,14 +18,15 @@ class regDeviceController extends BaseController
       $email = $req->input("currentaccount");
       $ID = $req->input("ID");
       $name = $req->input("device_Name");
-  //    echo $ID;
+
       try {
 
         if(strlen($ID) == 22)
         {
 
           $checkExisting = DB::connection('mysql')->table("devices")->where(['Device_ID'=>$ID])->get();
-          //if no exists
+
+          // if Device doesn't exists in table
           if(count($checkExisting) <= 0)
           {
             DB::connection("mysql")->table("devices")->insert(['email' => $email,'Device_ID' => $ID, 'DeviceName' => $name ,'status' => "offline"]);

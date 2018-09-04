@@ -19,31 +19,29 @@ class delete_device extends BaseController
        $ID = $req->input('ID');
        $email = $req->input('currentaccount');
 
-  /*   if (Schema::connection("accounts")->hasTable($email) == true) {
-         echo "FOUND";
-       } */
-
-       //check if lenght input is == 22
-
+       //check if input lenght is == 22
        if(strlen($ID) == 22){
+
          //check if device is in database
          $check = DB::connection("mysql")->table("devices")->where(['Device_ID'=>$ID])->get();
          if(count($check) > 0){
 
+           //if ID has been found in table, delete its row and return to devices.blade.php
            DB::connection("mysql")->table("devices")->where(['Device_ID'=>$ID])->delete();
-           return view("devices")->with(["email" => $email,"msg" => "Device removed from your table!\nPlease, keep in mind the device has been removed from your data table, but it still present in your Astarte database! If you want, you can register it again."]);
+           return view("devices")->with(["email" => $email,"msg" => "Device removed from your table! <br> Please, keep in mind the device has been removed from your data table, but it still present in your Astarte database! If you want, you can register it again."]);
          }
          else{
+           // if ID is not registered in the table
            return view("devices")->with(["email" => $email,"error" => "Device ID not found"]);
          }
        }
        else{
-         //too short
+
+         // input lenght wrong
+         // return error and add the h4 tag in view
+
          return view("devices")->with(["email" => $email,"error" => "Device ID invalid: lenght incorrect!"]);
        }
-
-       //else return error and add the h4 tag in view
-
     }
 }
 ?>
