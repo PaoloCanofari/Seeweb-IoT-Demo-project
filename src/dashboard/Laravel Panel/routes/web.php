@@ -33,4 +33,4 @@ Route::post('/over_value_trigger', 'device\overValueTrigger@main');
 
 Route::post('/lower_value_trigger', 'device\lowerValueTrigger@main');
 
-Route::post('/update_dashboard', 'UpdateDashboard@main');
+Route::post('/update_dashboard', 'dashboard\UpdateDashboard@main');

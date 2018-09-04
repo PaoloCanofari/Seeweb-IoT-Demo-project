@@ -133,8 +133,9 @@ function updateDashboard(){
       </button>
 
       <div class="dropdown-content">
-        <a href="javascript: update_config();">Change config</a>
+        <a href="javascript: update_config();">New Dashboard</a>
       </div>
+      
     </div>
 
     <div class="dropdown">

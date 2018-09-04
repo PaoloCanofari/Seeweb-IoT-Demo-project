@@ -30,14 +30,11 @@ class change_config extends BaseController
       $token = $req->input("token");
       $dashboard_id = $req->input("id");
 
-        //echo "FOUND";
-        //if there's already a dashboard active in database
+        //if there's already a dashboard active in database don't do anything, else insert its data in Database table
         $checkExisting = DB::connection('mysql')->table('dashboards')->where(['email'=>$email])->get();
 
         if(count($checkExisting) > 0)
-        {
-          DB::connection('mysql')->table("dashboards")->where(['email'=>$email])->update(['email' => $email, 'dashboard_id' => $dashboard_id, 'url' => $url, 'token' => $token]);
-        }
+        {}
         else{
           DB::connection("mysql")->table("dashboards")->insert(['email' => $email, 'dashboard_id' => $dashboard_id, 'url' => $url, 'token' => $token]);
         }
