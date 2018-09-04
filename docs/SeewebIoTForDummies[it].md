@@ -351,3 +351,12 @@ Una volta presa nota dell'ID della dashboard, bisogna creare un API Token. E' po
 Una volta aggiunta una chiave, sarà possibile visualizarla solo nel momento della creazione, quindi bisogna appuntarsela.
 
 A questo punto è possibile aggiungere al pannello la propria dashboard sotto l'apposita voce del menu.
+
+![](SeewebIoTForDummies[it].assets/SeewebIoTForDummies[it]-8ecf7ca6.png)
+
+Qui bisognerà inserire i dati della dashboard richiesti. Una volta aggiunta, nella home sarà possibile visualizzare tutti i pannelli della propria dashboard. Si possono aggiungere più dashboard con lo stesso procedimento e scegliere quale visualizzare tramte l'apposito `selettore`.
+
+### Ottenere lo status di un device tramite triggers
+
+Per poter visualizzare lo status di un device, bisogna prima registrarlo. Per fare ciò si può utilizzare il menu `DEVICES -> Register device` ed inserire i dati richiesti.
+A questo punto, il device sarà visibile in `DEVICES -> status Table`. Creando un trigger di tipo `device_trigger` con astarte e impostando la variabile target url in `<panel url>/status_trigger`, lo status del device si aggiornerà automaticamente a seconda dell'evento scelto (device_connected, device_disconnected o device_error).
