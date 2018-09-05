@@ -184,7 +184,7 @@ Si otterrà una risposta contenente un documento in formato JSON contenente tutt
 
 ### Installazione dei pacchetti necessari su Raspberry
 
-Per compilare il client di invio dati ad Astarte, sono necessari i seguenti pacchetti: `pip` `libqt5serialport5-dev` `libmosquittopp-dev` `qt5-qmake` `qt5-default` `cmake` `build-essential` `libssl-dev` `git` `pyserial (sudo pip install pyserial)`. Una volta installati tutti i pacchetti necessari, bisogna scaricare e compilare l'SDK per QT5 di Astarte.
+Per compilare il client di invio dati ad Astarte, sono necessari i seguenti pacchetti: `python3-pip` `libqt5serialport5-dev` `libmosquittopp-dev` `qt5-qmake` `qt5-default` `cmake` `build-essential` `libssl-dev` `git`  `python3` `pyserial (sudo pip install pyserial)`. Una volta installati tutti i pacchetti necessari, bisogna scaricare e compilare l'SDK per QT5 di Astarte.
 
 ```
 $ git clone https://github.com/astarte-platform/astarte-device-sdk-qt5
