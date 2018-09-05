@@ -125,7 +125,7 @@ Every API call, trigger or reference to the interface will always target the maj
 The interface introspection for each device must be inserted in JSON format in the `/ interfaces` directory, located in the same path as the client's execution file.
 
 ## Triggers
-Triggers in Astarte are the go-to mechanism for generating push events. In contrast with AppEngineâ€™s REST APIs, Triggers allow users to specify conditions upon which a custom payload is delivered to a recipient, using a specific `action`, which usually maps to a specific transport/protocol, such as HTTP.
+Triggers in Astarte are the go-to mechanism for generating push events. In contrast with AppEngine’s REST APIs, Triggers allow users to specify conditions upon which a custom payload is delivered to a recipient, using a specific `action`, which usually maps to a specific transport/protocol, such as HTTP.
 
 Each trigger is defined by two main components: `condition` and `action`.
 
@@ -154,7 +154,7 @@ Installing a trigger is easy. Simply make a HTTP POST to your realm url (adding 
     }
 }
 ```
-The following is an example of a trigger that is activated whenever the measured value of the UV rays exceeds 0.17 mV / cmÂ², indicating the sunrise.
+The following is an example of a trigger that is activated whenever the measured value of the UV rays exceeds 0.17 mV / cm², indicating the sunrise.
 ```
 {
     "data": {
@@ -192,7 +192,7 @@ Astarte will answer with a JSON document containig all registered data on provid
 
 ### Installing necessary packages on Raspberry
 
-To compile and install the Astarte SDK for QT5 framework, some packages are required: `libqt5serialport5-dev` `libmosquittopp-dev` `qt5-qmake` `qt5-default` `cmake` `build-essential` `libssl-dev` `git` `pyserial (sudo pip install pyserial)`. After installing those packages, download `Astarte Qt5 Device SDK` from GitHub:
+To compile and install the Astarte SDK for QT5 framework, some packages are required: `python3-pip` `libqt5serialport5-dev` `libmosquittopp-dev` `qt5-qmake` `qt5-default` `cmake` `build-essential` `libssl-dev` `git`  `python3`  `pyserial (sudo pip install pyserial)`. After installing those packages, download `Astarte Qt5 Device SDK` from GitHub:
 
 ```git clone https://github.com/astarte-platform/astarte-device-sdk-qt5 ```
 
