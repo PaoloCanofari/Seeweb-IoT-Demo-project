@@ -184,7 +184,7 @@ Due to how triggers work, it is fundamental to install the trigger before a devi
 
 To retrieve data from your astarte Realm, make a HTTP GET request at the following URL with Postman, authenticating with `AppEngine` token:
 
-`<realm name>.api.<your astarte domain>/v1/<realm name>/devices/<your deviceid>/interfaces/<interfaceName>/<DataPath>`
+`<realm name>.api.<your astarte domain>/appengine/v1/<realm name>/devices/<your deviceid>/interfaces/<interfaceName>/<DataPath>`
 
 Astarte will answer with a JSON document containig all registered data on provided device's interface.
 

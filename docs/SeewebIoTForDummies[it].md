@@ -176,7 +176,7 @@ Perché i trigger funzionino, è fondamentale installarli prima che il device si
 
 Per ottenere i dati dal proprio Realm, eseguire una richiesta HTTP GET al seguente url, utilizzado il token per l'autenticazione di `AppEngine`:
 
-`<realm name>.api.<your astarte domain>/v1/<realm name>/devices/<your deviceid>/interfaces/<interfaceName>/<DataPath>`
+`<realm name>.api.<your astarte domain>/appengine/v1/<realm name>/devices/<your deviceid>/interfaces/<interfaceName>/<DataPath>`
 
 Si otterrà una risposta contenente un documento in formato JSON contenente tutti i dati inviati correttamente dal device attraverso l'interfacicia dichiarata.
 
