@@ -125,7 +125,7 @@ Every API call, trigger or reference to the interface will always target the maj
 The interface introspection for each device must be inserted in JSON format in the `/ interfaces` directory, located in the same path as the client's execution file.
 
 ## Triggers
-Triggers in Astarte are the go-to mechanism for generating push events. In contrast with AppEngine’s REST APIs, Triggers allow users to specify conditions upon which a custom payload is delivered to a recipient, using a specific `action`, which usually maps to a specific transport/protocol, such as HTTP.
+Triggers in Astarte are the go-to mechanism for generating push events. In contrast with AppEngineâ€™s REST APIs, Triggers allow users to specify conditions upon which a custom payload is delivered to a recipient, using a specific `action`, which usually maps to a specific transport/protocol, such as HTTP.
 
 Each trigger is defined by two main components: `condition` and `action`.
 
@@ -154,7 +154,7 @@ Installing a trigger is easy. Simply make a HTTP POST to your realm url (adding 
     }
 }
 ```
-The following is an example of a trigger that is activated whenever the measured value of the UV rays exceeds 0.17 mV / cm², indicating the sunrise.
+The following is an example of a trigger that is activated whenever the measured value of the UV rays exceeds 0.17 mV / cmÂ², indicating the sunrise.
 ```
 {
     "data": {
@@ -322,7 +322,7 @@ The triggers provide JSON format all the data concerning the event that cause it
 		"event":
 		{
 			"type":"device_connected",
-			"device_ip_address":"212.25.179.137"
+			"device_ip_address":"IP"
 		},
 		"device_id":"2UZn1kJYQRutYe4Pk9HR_Q"
 	}
