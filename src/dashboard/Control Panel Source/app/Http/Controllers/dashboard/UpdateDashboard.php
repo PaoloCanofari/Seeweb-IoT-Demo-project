@@ -16,14 +16,14 @@ class UpdateDashboard extends BaseController
     public function main(Request $req){
 
       $email = $req->input('currentaccount');
-      $dashboardID = $req->input('dashboardSelector');
+      $DashboardName = $req->input('dashboardSelector');
 
-      $data = DB::connection('mysql')->table("dashboards")->where(["dashboard_id" => $dashboardID])->get();
+      $data = DB::connection('mysql')->table("dashboards")->where(["Dashboard_Name" => $DashboardName])->get();
 
       if(count($data) > 0){
         foreach ($data as $key) {
         //  return $this->getPanels($key->email, $key->dashboard_id, $key->url, $key->token);
-
+        $dashboardID = $key->dashboard_id;
         $dashboard_curl = $key->url."api/dashboards/uid/".$dashboardID;
 
         $authorization = "Authorization: Bearer ".$key->token;
@@ -49,7 +49,7 @@ class UpdateDashboard extends BaseController
         $dashboard = $json_output["dashboard"];
         $panels = $dashboard["panels"];
 
-        return view("home", ['panels' => $panels, 'url' => $url, 'email'=>$email, 'dashboardID' => $dashboardID]);
+        return view("home", ['db_name' => $key->Dashboard_Name, 'panels' => $panels, 'url' => $url, 'email'=>$email, 'dashboardID' => $dashboardID]);
 
         }
       }

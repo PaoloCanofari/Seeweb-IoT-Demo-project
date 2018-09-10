@@ -74,14 +74,21 @@ function dashboard(){
     <input type ="hidden" name="currentaccount" id="currentaccount" value="{{ $email }}">
 
     <div class="form__field">
+      <input id="api_id" type="text" name="id" class="form__input" placeholder="Dashboard ID" required>
+    </div>
+
+    <div class="form__field">
+      <input id="db_name" type="text" name="db_name" class="form__input" placeholder="Dashboard Name" required>
+    </div>
+
+    <div class="form__field">
       <input id="grafana_url" type="text" name="url" class="form__input" placeholder="Grafana URL" required>
     </div>
+
     <div class="form__field">
       <input id="api_token" type="text" name="token" class="form__input" placeholder="Dashboard Api token" required>
     </div>
-    <div class="form__field">
-      <input id="api_id" type="text" name="id" class="form__input" placeholder="Dashboard ID" required>
-    </div>
+
 
     <div class="form__field">
       <input type="submit" value="Send" >

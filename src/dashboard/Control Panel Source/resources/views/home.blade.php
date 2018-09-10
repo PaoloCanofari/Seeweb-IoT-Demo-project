@@ -74,9 +74,13 @@ function register(){
   document.getElementById("devices").submit();
 }
 
-function update_config(){
-  document.getElementById("devices").action = "change_config";
-  document.getElementById("arg").value = "change_config";
+function add_dashboard(){
+  document.getElementById("devices").action = "add_dashboard";
+  document.getElementById("devices").submit();
+}
+
+function dashboards_list(){
+  document.getElementById("devices").action = "db_list";
   document.getElementById("devices").submit();
 }
 
@@ -88,7 +92,7 @@ function getDashboardsIDs(){
       foreach ($data as $key) {
         ?>
         try {
-          var text = "<?php echo $key->dashboard_id;?>";
+          var text = "<?php echo $key->Dashboard_Name;?>";
           var option = document.createElement("option");
           option.value     = text;
           option.innerHTML = text;
@@ -133,9 +137,10 @@ function updateDashboard(){
       </button>
 
       <div class="dropdown-content">
-        <a href="javascript: update_config();">New Dashboard</a>
+        <a href="javascript: add_dashboard();">New Dashboard</a>
+        <a href="javascript: dashboards_list();">Available Dashboards</a>
       </div>
-      
+
     </div>
 
     <div class="dropdown">
@@ -190,7 +195,7 @@ function updateDashboard(){
 </form>
 
 <p align="center"> Account: {{$email}}</p>
-<p align="center">Current Dashboard ID: {{$dashboardID}}</p>
+<p align="center">Current Dashboard: {{$db_name}}</p>
 <p id="currentRange" align="center">Current Time Range: 1h</p>
 <br>
 

@@ -25,8 +25,12 @@ Route::post('/reg_device', 'device\regDeviceController@main');
 
 Route::post('/delete_device', 'device\delete_device@delete');
 
-Route::post('/change_config', 'dashboard\change_config@main');
+Route::post('/add_dashboard', 'dashboard\add_dashboard@main');
 
-Route::post('/input_config', 'dashboard\change_config@get_api');
+Route::post('/input_config', 'dashboard\add_dashboard@get_api');
 
 Route::post('/update_dashboard', 'dashboard\UpdateDashboard@main');
+
+Route::post('/db_list', 'dashboard\db_list@main');
+
+Route::post('/remove_db', 'dashboard\remove_db@main');

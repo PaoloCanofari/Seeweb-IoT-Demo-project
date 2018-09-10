@@ -59,7 +59,7 @@ class loginController extends BaseController
 
         if(count($data) > 0){
           foreach ($data as $key) {
-            return $this->getPanels($key->email, $key->dashboard_id, $key->url, $key->token);
+            return $this->getPanels($key->Dashboard_Name, $key->email, $key->dashboard_id, $key->url, $key->token);
           }
         }else{
           return view('home', ['email' => $email, 'error' => 'No Dashboard found']);
@@ -67,7 +67,7 @@ class loginController extends BaseController
 
       }
 
-      public function getPanels($email, $dashboradID, $url_request, $token){
+      public function getPanels($Dashboard_Name, $email, $dashboradID, $url_request, $token){
 
         // make HTTP POST request to grafana using token API. Every documentation at http://docs.grafana.org/http_api/dashboard/
         $dashboard_curl = $url_request."api/dashboards/uid/".$dashboradID;
@@ -95,7 +95,7 @@ class loginController extends BaseController
         $dashboard = $json_output["dashboard"];
         $panels = $dashboard["panels"];
 
-        return view("home", ['panels' => $panels, 'url' => $url, 'email'=>$email, 'dashboardID' => $dashboradID]);
+        return view("home", ['db_name' => $Dashboard_Name, 'panels' => $panels, 'url' => $url, 'email'=>$email, 'dashboardID' => $dashboradID]);
       }
 
 }
