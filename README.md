@@ -26,9 +26,14 @@ SeewebIoT demo project is an example project with the aim of explain how to use 
 
 ![](README.assets/README-9851d5de.png)
 
-# Preview screenshots
+## Preview screenshots
+#### Login Page
 ![](README.assets/README-f7c84850.png)
+
+#### Main page (Dashboard)
+![](README.assets/README-b7608d45.png)
 
 ![](README.assets/README-138b84ba.png)
 
+#### Devices list page
 ![](README.assets/README-bbb416eb.png)
