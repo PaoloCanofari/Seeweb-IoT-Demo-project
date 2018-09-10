@@ -328,7 +328,7 @@ I trigger forniscono in formato JSON tutti i dati riguardanti l'evento che ne ca
 		"event":
 		{
 			"type":"device_connected",
-			"device_ip_address":"212.25.179.137"
+			"device_ip_address":"IP"
 		},
 		"device_id":"2UZn1kJYQRutYe4Pk9HR_Q"
 	}
