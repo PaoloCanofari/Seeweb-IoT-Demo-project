@@ -19,6 +19,6 @@ SeewebIoT demo project is an example project with the aim of explain how to use 
 * Postman
 * Laravel (Control Panel)
 
-## Data collection flowchart
+## Data collection Flowchart
 
 ![](README.assets/README-9851d5de.png)
