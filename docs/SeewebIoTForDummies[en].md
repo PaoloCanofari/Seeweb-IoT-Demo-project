@@ -24,7 +24,7 @@ Interfaces have a predefined type, which can be either property or datastream. E
 
 **Properties:** represent a persistent, stateful synchronized state with no concept of history and timestamping. Properties are useful when dialing with settings, states or policies/rules. They are stored in a key-value fashion, and grouped according to their interface, and they are idempotent in the REST API semantics. Rather than being able to act on a stream like in the datastream case, properties can be retrieved, or can be used as a trigger whenever they change. Values in a properties interface can be unset (or deleted according to the http jargon): to allow such a thing, the interface must have its allow_unset property set to true.
 
-The owner of an interface has a write-only access to it, whereas other actors have read-only access. Interface ownership can be either `device` or `server`
+The owner of an interface has a write-only access to it, whereas other actors have read-only access. Interface ownership can be either `device` or `server`.
 Every interface must have an array of mappings. Each mapping describes an endpoint which is resolved to a path, it is strongly typed, and can have additional options. Any endpoint can support any number of parameters.
 
 This is a list of every endpoint type suppported:
@@ -122,7 +122,7 @@ To update an interface, issue a PUT protocol, with the same installation paramet
 If a device upgrades one of its interfaces to a new major version, the previous interface is parked and its data remains dangling.
 Every API call, trigger or reference to the interface will always target the major version declared in the introspection, regardless of the fact that a more recent version might have been installed in the realm.
 
-The interface introspection for each device must be inserted in JSON format in the `/ interfaces` directory, located in the same path as the client's execution file.
+The interface introspection for each device must be inserted in JSON format in the `/interfaces` directory, located in the same path as the client's execution file.
 
 ## Triggers
 Triggers in Astarte are the go-to mechanism for generating push events. In contrast with AppEngine’s REST APIs, Triggers allow users to specify conditions upon which a custom payload is delivered to a recipient, using a specific `action`, which usually maps to a specific transport/protocol, such as HTTP.
