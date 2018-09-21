@@ -11,6 +11,7 @@ SeewebIoT demo project is an example project with the aim of explain how to use 
 * MQ135 air quality sensor
 * UV intensity sensor
 * 5V to 3.3V logic converter circuit
+* SDS011 nova dust sensor
 
 ## Software used in this project
 
