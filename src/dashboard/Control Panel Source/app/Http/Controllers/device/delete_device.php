@@ -28,7 +28,7 @@ class delete_device extends BaseController
 
            //if ID has been found in table, delete its row and return to devices.blade.php
            DB::connection("mysql")->table("devices")->where(['Device_ID'=>$ID])->delete();
-           return view("devices")->with(["email" => $email,"msg" => "Device removed from your table! <br> Please, keep in mind the device has been removed from your data table, but it still present in your Astarte database! If you want, you can register it again."]);
+           return view("devices")->with(["email" => $email,"msg" => "Device removed from your table! Please, keep in mind the device has been removed from your data table, but it still present in your Astarte database! If you want, you can register it again."]);
          }
          else{
            // if ID is not registered in the table
