@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/logo.png</file>
+        <file>icons/wifi1.png</file>
+        <file>icons/wifi2.png</file>
+        <file>icons/wifi3.png</file>
+        <file>icons/wifi4.png</file>
+    </qresource>
+</RCC>
