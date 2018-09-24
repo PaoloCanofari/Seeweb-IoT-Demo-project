@@ -6,7 +6,7 @@
 
 QT       += core gui widgets network
 
-TARGET = IoT_Display
+TARGET = SMAUG_2018
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use

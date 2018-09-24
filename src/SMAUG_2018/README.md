@@ -1,4 +1,4 @@
-# SeewebIoT Display version
+# SeewebIoT Display version for SMAUG 2018
 
 Here there is the source code for a second example device, with a 3.5" display and different sensors from the normal version. It uses a `Raspbery Pi`, `Arduino Nano` and `nova dust sensor SDS011` to measure `temperature`, `humidity`, `Air Pollution`, `Light Percentage`, `PM 2.5`, `PM 10` and `Noise`. The arduino code and circuit can be found in `code and circuit/` folder. It basically needs the same library packages of SeewebIoT application.
 
