@@ -234,7 +234,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Humidity:</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Humidity [%] :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -246,7 +246,7 @@
         </font>
        </property>
        <property name="text">
-        <string>PM 10: </string>
+        <string>PM 10 [mg/m³] : </string>
        </property>
       </widget>
      </item>
@@ -258,7 +258,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Noise: </string>
+        <string>Noise [db]: </string>
        </property>
       </widget>
      </item>
@@ -270,7 +270,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Light intensity:</string>
+        <string>Light Percentage [%]:</string>
        </property>
       </widget>
      </item>
@@ -324,7 +324,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Temperature: </string>
+        <string>Temperature [°C] : </string>
        </property>
       </widget>
      </item>
@@ -336,7 +336,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Air Pollution: </string>
+        <string>Air Pollution [PPM]: </string>
        </property>
       </widget>
      </item>
@@ -380,7 +380,7 @@
         </font>
        </property>
        <property name="text">
-        <string>PM 2.5:</string>
+        <string>PM 2.5 [mg/m³] :</string>
        </property>
       </widget>
      </item>
