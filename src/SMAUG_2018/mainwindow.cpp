@@ -110,25 +110,25 @@ void MainWindow::getData(){
 
         //insert value inside appropriate label
         if(key == "humidity"){
-            ui->humlbl->setText(textVal);
+            ui->humlbl->setText(textVal + " %");
         }
         else if(key == "temperature"){
-            ui->templbl->setText(textVal);
+            ui->templbl->setText(textVal + " °C");
         }
         else if(key == "pm2"){
-            ui->pm2lbl->setText(textVal);
+            ui->pm2lbl->setText(textVal + " mg/m³");
         }
         else if(key == "pm10"){
-            ui->pm10lbl->setText(textVal);
+            ui->pm10lbl->setText(textVal + " mg/m³");
         }
         else if(key == "aqi"){
-            ui->aqilbl->setText(textVal);
+            ui->aqilbl->setText(textVal + " PPM");
         }
         else if(key == "lightInt"){
-            ui->lightlbl->setText(textVal);
+            ui->lightlbl->setText(textVal + " %");
         }
         else if(key == "noise"){
-            ui->noiselbl->setText(textVal);
+            ui->noiselbl->setText(textVal + " Db");
         }
     }
 
